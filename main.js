@@ -1,0 +1,16 @@
+// Begin with a function called getComputerChoice that randomly returns rock, paper or scissors.
+
+const getComputerChoice = function () {
+  let computerChoice = Math.floor(Math.random() * 3) + 1;
+  if (computerChoice === 1) {
+    return "rock";
+  } else if (computerChoice === 2) {
+    return "paper";
+  } else {
+    return "scissors";
+  }
+};
+
+console.log(getComputerChoice());
+console.log(getComputerChoice());
+console.log(getComputerChoice());
