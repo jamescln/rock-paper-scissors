@@ -32,6 +32,15 @@ const playRound = function (playerSelection, computerSelection) {
       computerSelection === "paper")
   ) {
     return `Computer chooses ${computerSelection}. ${playerSelection.toLowerCase()} beats ${computerSelection}. You win!`;
+  } else if (
+    (playerSelection.toLowerCase() === "rock" &&
+      computerSelection === "rock") ||
+    (playerSelection.toLowerCase() === "paper" &&
+      computerSelection === "paper") ||
+    (playerSelection.toLowerCase() === "scissors" &&
+      computerSelection === "scissors")
+  ) {
+    return `Computer chooses ${computerSelection}. It's a draw!`;
   } else {
     return `Not a valid option. Computer wins by default!`;
   }
