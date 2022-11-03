@@ -1,3 +1,8 @@
+// define playerScore and computerScore values
+
+let playerScore = 0;
+let computerScore = 0;
+
 // Begin with a function called getComputerChoice that randomly returns rock, paper or scissors.
 
 const getComputerChoice = function () {
@@ -22,6 +27,7 @@ const playRound = function (playerSelection, computerSelection) {
     (playerSelection.toLowerCase() === "scissors" &&
       computerSelection === "rock")
   ) {
+    computerScore++;
     return `Computer chooses ${computerSelection}. ${computerSelection} beats ${playerSelection.toLowerCase()}. You lose!`;
   } else if (
     (playerSelection.toLowerCase() === "rock" &&
@@ -31,6 +37,7 @@ const playRound = function (playerSelection, computerSelection) {
     (playerSelection.toLowerCase() === "scissors" &&
       computerSelection === "paper")
   ) {
+    playerScore++;
     return `Computer chooses ${computerSelection}. ${playerSelection.toLowerCase()} beats ${computerSelection}. You win!`;
   } else if (
     (playerSelection.toLowerCase() === "rock" &&
@@ -54,6 +61,21 @@ const game = function () {
       `Rock, Paper or Scissors? Type your selection. (${i + 1} of 5)`
     );
     console.log(playRound(playerChoice, getComputerChoice()));
+    console.log(
+      `Current Score: Player ${playerScore} - Computer ${computerScore}`
+    );
+    if (i === 4) {
+      console.log(
+        `Final Score: Player ${playerScore} - Computer ${computerScore}`
+      );
+      if (computerScore > playerScore) {
+        console.log(`Computer Wins!`);
+      } else if (computerScore < playerScore) {
+        console.log(`You Win!`);
+      } else {
+        console.log(`It's a Draw!`);
+      }
+    }
   }
 };
 
