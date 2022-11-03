@@ -15,18 +15,39 @@ const getComputerChoice = function () {
 
 const playRound = function (playerSelection, computerSelection) {
   if (
-    (playerSelection === "rock" && computerSelection === "paper") ||
-    (playerSelection === "paper" && computerSelection === "scissors") ||
-    (playerSelection === "scissors" && computerSelection === "rock")
+    (playerSelection.toLowerCase() === "rock" &&
+      computerSelection === "paper") ||
+    (playerSelection.toLowerCase() === "paper" &&
+      computerSelection === "scissors") ||
+    (playerSelection.toLowerCase() === "scissors" &&
+      computerSelection === "rock")
   ) {
-    return `Computer chooses ${computerSelection}. ${computerSelection} beats ${playerSelection}. You lose!`;
+    return `Computer chooses ${computerSelection}. ${computerSelection} beats ${playerSelection.toLowerCase()}. You lose!`;
   } else if (
-    (playerSelection === "rock" && computerSelection === "scissors") ||
-    (playerSelection === "paper" && computerSelection === "rock") ||
-    (playerSelection === "scissors" && computerSelection === "paper")
+    (playerSelection.toLowerCase() === "rock" &&
+      computerSelection === "scissors") ||
+    (playerSelection.toLowerCase() === "paper" &&
+      computerSelection === "rock") ||
+    (playerSelection.toLowerCase() === "scissors" &&
+      computerSelection === "paper")
   ) {
-    return `Computer chooses ${computerSelection}. ${playerSelection} beats ${computerSelection}. You win!`;
+    return `Computer chooses ${computerSelection}. ${playerSelection.toLowerCase()} beats ${computerSelection}. You win!`;
   } else {
     return `Not a valid option. Computer wins by default!`;
   }
 };
+
+// Create a function called game that plays 5 rounds and displays the results.
+
+const game = function () {
+  for (let i = 0; i < 5; i++) {
+    let playerChoice = prompt(
+      `Rock, Paper or Scissors? Type your selection. (${i + 1} of 5)`
+    );
+    console.log(playRound(playerChoice, getComputerChoice()));
+  }
+};
+
+// call the game funciton
+
+game();
