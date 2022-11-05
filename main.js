@@ -55,28 +55,29 @@ const playRound = function (playerSelection, computerSelection) {
 
 // Create a function called game that plays 5 rounds and displays the results.
 
+// removed the logic that plays exactly 5 rounds
 const game = function () {
-  for (let i = 0; i < 5; i++) {
-    let playerChoice = prompt(
-      `Rock, Paper or Scissors? Type your selection. (${i + 1} of 5)`
-    );
-    console.log(playRound(playerChoice, getComputerChoice()));
+  // for (let i = 0; i < 5; i++) {
+  let playerChoice = prompt(
+    `Rock, Paper or Scissors? Type your selection. (${i + 1} of 5)`
+  );
+  console.log(playRound(playerChoice, getComputerChoice()));
+  console.log(
+    `Current Score: Player ${playerScore} - Computer ${computerScore}`
+  );
+  if (i === 4) {
     console.log(
-      `Current Score: Player ${playerScore} - Computer ${computerScore}`
+      `Final Score: Player ${playerScore} - Computer ${computerScore}`
     );
-    if (i === 4) {
-      console.log(
-        `Final Score: Player ${playerScore} - Computer ${computerScore}`
-      );
-      if (computerScore > playerScore) {
-        console.log(`Computer Wins!`);
-      } else if (computerScore < playerScore) {
-        console.log(`You Win!`);
-      } else {
-        console.log(`It's a Draw!`);
-      }
+    if (computerScore > playerScore) {
+      console.log(`Computer Wins!`);
+    } else if (computerScore < playerScore) {
+      console.log(`You Win!`);
+    } else {
+      console.log(`It's a Draw!`);
     }
   }
+  // }
 };
 
 // call the game funciton
