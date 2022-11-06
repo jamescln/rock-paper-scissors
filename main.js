@@ -64,7 +64,6 @@ const playRound = function (playerSelection, computerSelection) {
 
 // removed the logic that plays exactly 5 rounds
 const game = function () {
-  console.log(playerChoice);
   resultText.textContent = playRound(playerChoice, getComputerChoice());
   console.log(
     `Current Score: Player ${playerScore} - Computer ${computerScore}`
