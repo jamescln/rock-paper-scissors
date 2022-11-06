@@ -1,3 +1,9 @@
+// Global
+
+const playerChoiceButton = document.querySelector(".playerChoice");
+const resultText = document.querySelector(".result");
+let playerChoice;
+
 // define playerScore and computerScore values
 
 let playerScore = 0;
@@ -56,11 +62,8 @@ const playRound = function (playerSelection, computerSelection) {
 // Create a function called game that plays 5 rounds and displays the results.
 
 // removed the logic that plays exactly 5 rounds
-const game = function () {
-  // for (let i = 0; i < 5; i++) {
-  let playerChoice = prompt(
-    `Rock, Paper or Scissors? Type your selection. (${i + 1} of 5)`
-  );
+const game = function (e) {
+  playerChoice = e.textContent;
   console.log(playRound(playerChoice, getComputerChoice()));
   console.log(
     `Current Score: Player ${playerScore} - Computer ${computerScore}`
@@ -80,6 +83,6 @@ const game = function () {
   // }
 };
 
-// call the game funciton
+// Button events to call game function
 
-game();
+playerChoiceButton.onClick(game());
