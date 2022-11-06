@@ -43,9 +43,6 @@ body {
 
 /*Button styles*/
 
-.playerChoiceRock,
-.playerChoicePaper,
-.playerChoiceScissors,
 .playerChoice {
   height: 5rem;
   width: 16rem;
@@ -53,6 +50,7 @@ body {
 
 /*Result Styles*/
 
-.result {
+.result,
+.final-result {
   font-size: 2rem;
 }
