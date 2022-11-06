@@ -21,6 +21,14 @@ body {
   align-items: center;
 }
 
+.button-container {
+  display: flex;
+  height: 100px;
+  width: auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
 /*Title styles*/
 
 .title {
@@ -30,5 +38,18 @@ body {
 /*Subtitle styles*/
 
 .subtitle {
+  font-size: 2rem;
+}
+
+/*Button styles*/
+
+.playerChoice {
+  height: 5rem;
+  width: 16rem;
+}
+
+/*Result Styles*/
+
+.result {
   font-size: 2rem;
 }
