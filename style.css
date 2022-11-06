@@ -45,7 +45,8 @@ body {
 
 .playerChoiceRock,
 .playerChoicePaper,
-.playerChoiceScissors {
+.playerChoiceScissors,
+.playerChoice {
   height: 5rem;
   width: 16rem;
 }

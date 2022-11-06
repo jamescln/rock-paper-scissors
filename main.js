@@ -3,6 +3,7 @@
 const buttonRock = document.querySelector(".playerChoiceRock");
 const buttonPaper = document.querySelector(".playerChoicePaper");
 const buttonScissors = document.querySelector(".playerChoiceScissors");
+const playerChoiceButtons = document.querySelectorAll(".playerChoice");
 const resultText = document.querySelector(".result");
 let playerChoice;
 
@@ -67,7 +68,7 @@ const playRound = function (playerSelection, computerSelection) {
 // removed the logic that plays exactly 5 rounds
 const game = function () {
   console.log(playerChoice);
-  console.log(playRound(playerChoice, getComputerChoice()));
+  resultText.textContent = playRound(playerChoice, getComputerChoice());
   console.log(
     `Current Score: Player ${playerScore} - Computer ${computerScore}`
   );
@@ -89,7 +90,9 @@ const game = function () {
 
 // Button events
 
-buttonRock.addEventListener("click", function (e) {
-  playerChoice = e.target.textContent;
-  game();
+playerChoiceButtons.forEach((button) => {
+  button.addEventListener("click", function (e) {
+    playerChoice = e.target.textContent;
+    game();
+  });
 });
