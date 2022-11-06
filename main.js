@@ -1,15 +1,16 @@
 // Global
 
-const playerChoiceButton = document.querySelectorAll(".playerChoice");
+const buttonRock = document.querySelector(".playerChoiceRock");
+const buttonPaper = document.querySelector(".playerChoicePaper");
+const buttonScissors = document.querySelector(".playerChoiceScissors");
 const resultText = document.querySelector(".result");
 let playerChoice;
-
-console.log(playerChoiceButton);
 
 // define playerScore and computerScore values
 
 let playerScore = 0;
 let computerScore = 0;
+let round = 0;
 
 // Begin with a function called getComputerChoice that randomly returns rock, paper or scissors.
 
@@ -64,14 +65,14 @@ const playRound = function (playerSelection, computerSelection) {
 // Create a function called game that plays 5 rounds and displays the results.
 
 // removed the logic that plays exactly 5 rounds
-const game = function (e) {
-  playerChoice = e.target.textContent;
+const game = function () {
   console.log(playerChoice);
   console.log(playRound(playerChoice, getComputerChoice()));
   console.log(
     `Current Score: Player ${playerScore} - Computer ${computerScore}`
   );
-  if (i === 4) {
+  round++;
+  if (round === 5) {
     console.log(
       `Final Score: Player ${playerScore} - Computer ${computerScore}`
     );
@@ -86,11 +87,9 @@ const game = function (e) {
   // }
 };
 
-// Button events to call game function
+// Button events
 
-playerChoiceButton.addEventListener("click", test());
-
-const test = function (e) {
+buttonRock.addEventListener("click", function (e) {
   playerChoice = e.target.textContent;
-  console.log(playerChoice);
-};
+  game();
+});
