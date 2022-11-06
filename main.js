@@ -1,8 +1,5 @@
 // Global
 
-const buttonRock = document.querySelector(".playerChoiceRock");
-const buttonPaper = document.querySelector(".playerChoicePaper");
-const buttonScissors = document.querySelector(".playerChoiceScissors");
 const playerChoiceButtons = document.querySelectorAll(".playerChoice");
 const resultText = document.querySelector(".result");
 let playerChoice;
