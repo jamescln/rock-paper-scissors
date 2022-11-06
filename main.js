@@ -2,6 +2,7 @@
 
 const playerChoiceButtons = document.querySelectorAll(".playerChoice");
 const resultText = document.querySelector(".result");
+const finalResultText = document.querySelector(".final-result");
 let playerChoice;
 
 // define playerScore and computerScore values
@@ -65,9 +66,7 @@ const playRound = function (playerSelection, computerSelection) {
 // removed the logic that plays exactly 5 rounds
 const game = function () {
   resultText.textContent = playRound(playerChoice, getComputerChoice());
-  console.log(
-    `Current Score: Player ${playerScore} - Computer ${computerScore}`
-  );
+  finalResultText.textContent = `Current Score: Player ${playerScore} - Computer ${computerScore}`;
   round++;
   if (round === 5) {
     console.log(
