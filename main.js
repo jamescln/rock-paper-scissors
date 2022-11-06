@@ -85,10 +85,11 @@ const game = function () {
 };
 
 // Button events
-
 playerChoiceButtons.forEach((button) => {
   button.addEventListener("click", function (e) {
     playerChoice = e.target.textContent;
-    game();
+    if (round < 5) {
+      game();
+    }
   });
 });
