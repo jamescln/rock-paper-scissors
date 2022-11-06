@@ -1,8 +1,10 @@
 // Global
 
-const playerChoiceButton = document.querySelector(".playerChoice");
+const playerChoiceButton = document.querySelectorAll(".playerChoice");
 const resultText = document.querySelector(".result");
 let playerChoice;
+
+console.log(playerChoiceButton);
 
 // define playerScore and computerScore values
 
@@ -63,7 +65,8 @@ const playRound = function (playerSelection, computerSelection) {
 
 // removed the logic that plays exactly 5 rounds
 const game = function (e) {
-  playerChoice = e.textContent;
+  playerChoice = e.target.textContent;
+  console.log(playerChoice);
   console.log(playRound(playerChoice, getComputerChoice()));
   console.log(
     `Current Score: Player ${playerScore} - Computer ${computerScore}`
@@ -85,4 +88,9 @@ const game = function (e) {
 
 // Button events to call game function
 
-playerChoiceButton.onClick(game());
+playerChoiceButton.addEventListener("click", test());
+
+const test = function (e) {
+  playerChoice = e.target.textContent;
+  console.log(playerChoice);
+};

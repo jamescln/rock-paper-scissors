@@ -43,7 +43,7 @@ body {
 
 /*Button styles*/
 
-.playerChoice {
+.playerChoiceRock .playerChoicePaper .playerChoiceScissors {
   height: 5rem;
   width: 16rem;
 }
