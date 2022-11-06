@@ -11,9 +11,9 @@ body {
   font-size: 12px;
 }
 
-/*Title styles*/
+/*Container styles*/
 
-.title-container {
+.text-container {
   display: flex;
   height: 75px;
   width: auto;
@@ -21,8 +21,14 @@ body {
   align-items: center;
 }
 
+/*Title styles*/
+
 .title {
   font-size: 3rem;
 }
 
 /*Subtitle styles*/
+
+.subtitle {
+  font-size: 2rem;
+}
