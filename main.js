@@ -67,14 +67,14 @@ const game = function () {
   finalResultText.textContent = `Current Score: Player ${playerScore} - Computer ${computerScore}`;
   round++;
   if (round === 5) {
-    finalResultText.textContent = `Final Score: Player ${playerScore} - Computer ${computerScore}`;
     if (computerScore > playerScore) {
-      console.log(`Computer Wins!`);
+      gameResult = "Computer Wins!";
     } else if (computerScore < playerScore) {
-      console.log(`You Win!`);
+      gameResult = "You Win!";
     } else {
-      console.log(`It's a Draw!`);
+      gameResult = "It's a Draw!";
     }
+    finalResultText.textContent = `Final Score: Player ${playerScore} - Computer ${computerScore}. ${gameResult}`;
   }
   // }
 };
