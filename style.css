@@ -1,0 +1,28 @@
+/*Global*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: helvetica, sans-serif;
+  font-size: 12px;
+}
+
+/*Title styles*/
+
+.title-container {
+  display: flex;
+  height: 75px;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+/*Subtitle styles*/
